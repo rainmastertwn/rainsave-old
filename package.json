@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@webpack-cli/generators": "^3.0.7",
+    "gh-pages": "^6.3.0",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "deploy": "npm run build & gh-pages --dotfiles -d . -m 'Deploy to GitHub Pages'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1"
+  }
+}

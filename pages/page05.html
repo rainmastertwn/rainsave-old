@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" >
+<head>
+  <!-- Google tag (gtag.js) --> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDL2Z0JYQR"></script> 
+  <script>
+    window.dataLayer = window.dataLayer || [];   
+    function gtag(){dataLayer.push(arguments);}   
+    gtag('js', new Date());   
+    gtag('config', 'G-KDL2Z0JYQR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rain SAVE 儲集框架_需求計算</title>
+  <link rel="icon" href="/images/rainsave_bookmark.png">
+  <meta name="description" content="Rain SAVE 儲集框架 為一種塑膠射出成型製品其廣泛運用於地下儲集雨水及滲透保水等基地保水之工程使用，我司所生產之儲集框架產品具有精度高、易於安裝、抗壓強度高、質量輕盈等特性。產品採100%均質一級回收塑料並添加各式耐衝擊、抗紫外線、抗凍融等助劑製成。">
+  <meta name="author" content="Rain Master">
+  <meta property="og:url"   content="https://rainsave.com.tw/pages/page05.html" />
+  <meta property="og:type"  content="website" />
+  <meta property="og:title" content="Rain SAVE 儲集框架_需求計算" />
+  <meta property="og:image" content="https://rainsave.com.tw/images/page05/rainsave_cad_p5.jpg" />
+  <meta property="og:description" content="Rain SAVE 儲集框架 為一種塑膠射出成型製品其廣泛運用於地下儲集雨水及滲透保水等基地保水之工程使用，我司所生產之儲集框架產品具有精度高、易於安裝、抗壓強度高、質量輕盈等特性。產品採100%均質一級回收塑料並添加各式耐衝擊、抗紫外線、抗凍融等助劑製成。" />
+  <link rel='stylesheet' href='../style/custom.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11422925387"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-11422925387');
+  </script>
+</head>
+<body class="bg-light" onload="downloadIMG()">
+  <my-header></my-header>
+  <div class="container">
+    <h1 class="title">Rain SAVE 需求數量計算</h1>
+    <div class="row wholecontent">
+      <div class="col-sm-12">
+        <p class="intro_p2">儲集框架會因設計上的體積長、寬、深大小的不同，使用的製品數量會有些差異進而影響到整體的施工單價 (*長與寬都必須要是50cm的倍數，深度必須是25cm的倍數)</p>
+      </div>
+      <div class="col-sm-9">
+        <div class="row fill_inbox">
+          <h5 class="title_m clac_tor">需求數量試算機</h5>
+          <div class="col-sm-12 typein">
+            <label for="lengthId">設計長度：
+              <input id="lengthId" type="text" placeholder="輸入您施作長度"/><span>m</span>
+            </label>
+            <label for="widthId">設計寬度：
+              <input id="widthId" type="text" placeholder="輸入您施作寬度"/><span>m</span>
+            </label>
+            <label for="depthId">設計深度：
+              <input id="depthId" type="text" placeholder="輸入您施作深度"/><span>m</span>
+            </label>
+            <button class="calc_all" id="calcId">計算</button>
+            <button class="clear_all" id="clearId">清除</button>
+            <hr/>
+          </div>
+        </div>
+        <div class="row resultbox">
+          <div class="col-sm-5"> 
+            <h6>您需要...</h6>
+            <p class="body">主體數量<span class="result" id="resultbodyId"></span>個</p>
+            <p class="board">側板數量<span class="result" id="resultboardId"></span>片</p>
+          </div>
+          <div class="col-sm-5"> 
+            <h6>延伸計算↓</h6>
+            <p class="body">滲透型：透水不織布<span class="result" id="resultInfilId"></span>m²</p>
+            <p class="board">儲水型：坦克士地工不透水膜<span class="result" id="resultSaveId"></span>m²</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="price">
+          <h5 class="title_m">預算牌價</h5>
+          <p class="text_p2 red">儲集槽主體：400/個</p>
+          <p class="text_p2 red">儲集槽側板：400/片</p>
+        </div>
+        <div class="price2">
+          <h5 class="title_m">預算牌價</h5>
+          <p class="text_p2 red">透水過濾布：100/m²</p>
+          <p class="text_p2 red">防沉格網：200/m²</p>
+          <p class="text_p2 red">坦克士地工不透水膜：300/m²</p>
+        </div>
+      </div>
+    </div>
+    <div class="row table">
+      <div class="col-lg-6 infil_calc mt-2">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-first_1-tab" data-bs-toggle="tab" data-bs-target="#nav-first_1" type="button" role="tab" aria-controls="nav-first_1" aria-selected="true">槽(每槽單價計)</button>
+            <button class="nav-link" id="nav-second_1-tab" data-bs-toggle="tab" data-bs-target="#nav-second_1" type="button" role="tab" aria-controls="nav-second_1" aria-selected="false">m³(每立方單價計) </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-first_1" role="tabpanel" aria-labelledby="nav-first_1-tab"> 
+            <table>
+              <tr>
+                <th colspan="7"> 
+                  <h5>單價分析表(滲透型)</h5>
+                </th>
+              </tr>
+              <tr>
+                <td>項次：    </td>
+                <td colspan="6">工程編號：<span class="intable">工程名稱：雨水儲集框架設施</span></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">工作項目：儲集框架(滲透型)</td>
+                <td colspan="2">單位：槽</td>
+                <td colspan="2">計價代碼：</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>工料名稱</td>
+                <td>單位</td>
+                <td>數量</td>
+                <td>單價</td>
+                <td>複價</td>
+                <td>編碼(備註)</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架主體</td>
+                <td>個</td>
+                <td id="table_bodyNumId"> </td>
+                <td>400</td>
+                <td id="table_bodySpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架側板(h:4cm，槽體4面封板)</td>
+                <td>片</td>
+                <td id="table_boardNumId"> </td>
+                <td>400</td>
+                <td id="table_boardSpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>210kgf/cm²混凝土 (h:10cm)</td>
+                <td>m³</td>
+                <td id="table_concretNumId"> </td>
+                <td>2400</td>
+                <td id="table_concretSpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>透水過濾布(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_infilcloNumId"></td>
+                <td>100</td>
+                <td id="table_infilcloSpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>防沉格網(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_netNumId"></td>
+                <td>200</td>
+                <td id="table_netSpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架安裝費用及其他雜費</td>
+                <td class="table_info" colspan="5">詳請聯絡總公司業務</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>合計</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td id="table_totalpriceId"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">人工： <span class="intable">機具：</span></td>
+                <td colspan="2" rowspan="2">每槽單價計 </td>
+                <td id="table_totalpriceId_1" rowspan="2"> </td>
+                <td rowspan="2"> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">材料： <span class="intable">雜項：</span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="nav-second_1" role="tabpanel" aria-labelledby="nav-second_1-tab"> 
+            <table>
+              <tr>
+                <th colspan="7"> 
+                  <h5>單價分析表(滲透型)</h5>
+                </th>
+              </tr>
+              <tr>
+                <td>項次：    </td>
+                <td colspan="6">工程編號：<span class="intable">工程名稱：雨水儲集框架設施</span></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">工作項目：儲集框架(滲透型)</td>
+                <td colspan="2">單位：m³</td>
+                <td colspan="2">計價代碼：</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>工料名稱</td>
+                <td>單位</td>
+                <td>數量</td>
+                <td>單價</td>
+                <td>複價</td>
+                <td>編碼(備註)</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架主體</td>
+                <td>個</td>
+                <td id="table_bodyNumId_3">16</td>
+                <td>400</td>
+                <td id="table_bodySpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架側板(h:4cm，槽體4面封板)</td>
+                <td>m²</td>
+                <td id="table_boardNumId_3"> </td>
+                <td>1600</td>
+                <td id="table_boardSpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>210kgf/cm²混凝土 (h:10cm)</td>
+                <td>m³</td>
+                <td id="table_concretNumId_3"> </td>
+                <td>2400</td>
+                <td id="table_concretSpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>透水過濾布(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_infilcloNumId_3"></td>
+                <td>100</td>
+                <td id="table_infilcloSpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>防沉格網(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_netNumId_3"></td>
+                <td>200</td>
+                <td id="table_netSpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架安裝費用及其他雜費</td>
+                <td class="table_info" colspan="5">詳請聯絡總公司業務</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>合計</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td id="table_totalpriceId_3"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">人工： <span class="intable">機具：</span></td>
+                <td colspan="2" rowspan="2">每立方單價計 </td>
+                <td id="table_totalpriceId_3_1" rowspan="2"> </td>
+                <td rowspan="2"> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">材料： <span class="intable">雜項：</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 save_calc mt-2">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-first_2-tab" data-bs-toggle="tab" data-bs-target="#nav-first_2" type="button" role="tab" aria-controls="nav-first_2" aria-selected="true">槽(每槽單價計)</button>
+            <button class="nav-link" id="nav-second_2-tab" data-bs-toggle="tab" data-bs-target="#nav-second_2" type="button" role="tab" aria-controls="nav-second_2" aria-selected="false">m³(每立方單價計) </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-first_2" role="tabpanel" aria-labelledby="nav-first_2-tab">
+            <table>
+              <tr>
+                <th colspan="7"> 
+                  <h5>單價分析表(儲水型)</h5>
+                </th>
+              </tr>
+              <tr>
+                <td>項次：    </td>
+                <td colspan="6">工程編號：<span class="intable">工程名稱：雨水儲集框架設施</span></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">工作項目：儲集框架(儲水型)</td>
+                <td colspan="2">單位：槽</td>
+                <td colspan="2">計價代碼：</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>工料名稱</td>
+                <td>單位</td>
+                <td>數量</td>
+                <td>單價</td>
+                <td>複價</td>
+                <td>編碼(備註)</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架主體</td>
+                <td>個</td>
+                <td id="table_bodyNumId_2"> </td>
+                <td>400</td>
+                <td id="table_bodySpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架側板(h:4cm，槽體4面封板)</td>
+                <td>片</td>
+                <td id="table_boardNumId_2"> </td>
+                <td>400</td>
+                <td id="table_boardSpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>210kgf/cm²混凝土 (h:10cm)</td>
+                <td>m³</td>
+                <td id="table_concretNumId_2"> </td>
+                <td>2400</td>
+                <td id="table_concretSpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>透水過濾布(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_infilcloNumId_2"> </td>
+                <td>100</td>
+                <td id="table_infilcloSpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>防沉格網(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_netNumId_2"> </td>
+                <td>200</td>
+                <td id="table_netSpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>坦克士地工不透水膜(含搭接損耗及燒黏費用)</td>
+                <td>m²</td>
+                <td id="table_uninfilNumId_2"> </td>
+                <td>300</td>
+                <td id="table_uninfilSpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架安裝費用及其他雜費</td>
+                <td class="table_info" colspan="5">詳請聯絡總公司業務</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>合計</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td id="table_totalpriceId_2"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">人工： <span class="intable">機具：</span></td>
+                <td colspan="2" rowspan="2">每槽單價計 </td>
+                <td id="table_totalpriceId_2_1" rowspan="2"> </td>
+                <td rowspan="2"> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">材料： <span class="intable">雜項：</span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="nav-second_2" role="tabpanel" aria-labelledby="nav-second_2-tab">
+            <table>
+              <tr>
+                <th colspan="7"> 
+                  <h5>單價分析表(儲水型)</h5>
+                </th>
+              </tr>
+              <tr>
+                <td>項次：    </td>
+                <td colspan="6">工程編號：<span class="intable">工程名稱：雨水儲集框架設施</span></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">工作項目：儲集框架(儲水型)</td>
+                <td colspan="2">單位：m³</td>
+                <td colspan="2">計價代碼：</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>工料名稱</td>
+                <td>單位</td>
+                <td>數量</td>
+                <td>單價</td>
+                <td>複價</td>
+                <td>編碼(備註)</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架主體</td>
+                <td>個</td>
+                <td id="table_bodyNumId_4">16</td>
+                <td>400</td>
+                <td id="table_bodySpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架側板(h:4cm，槽體4面封板)</td>
+                <td>m²</td>
+                <td id="table_boardNumId_4"> </td>
+                <td>1600</td>
+                <td id="table_boardSpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>210kgf/cm²混凝土 (h:10cm)</td>
+                <td>m³</td>
+                <td id="table_concretNumId_4"> </td>
+                <td>2400</td>
+                <td id="table_concretSpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>透水過濾布(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_infilcloNumId_4"> </td>
+                <td>100</td>
+                <td id="table_infilcloSpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>防沉格網(含搭接損耗及鋪設費用)</td>
+                <td>m²</td>
+                <td id="table_netNumId_4"> </td>
+                <td>200</td>
+                <td id="table_netSpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>坦克士地工不透水膜(含搭接損耗及燒黏費用)</td>
+                <td>m²</td>
+                <td id="table_uninfilNumId_4"> </td>
+                <td>300</td>
+                <td id="table_uninfilSpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>儲集框架安裝費用及其他雜費</td>
+                <td class="table_info" colspan="5">詳請聯絡總公司業務</td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>合計</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td id="table_totalpriceId_4"> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">人工： <span class="intable">機具：</span></td>
+                <td colspan="2" rowspan="2">每立方單價計 </td>
+                <td id="table_totalpriceId_4_1" rowspan="2"> </td>
+                <td rowspan="2"> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td colspan="2">材料： <span class="intable">雜項：</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="title">Rain SAVE 資源下載</h1>
+    <div class="row mb-5 g-5">
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/1_rainsave_catalog.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/catalog.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/catalog.png" alt="產品型錄">
+          </picture>
+          <div  id="downloadIMG1" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/2_comparison_table_of material.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/technic_compare.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/technic_compare.png" alt="工法比較">
+          </picture>
+          <div  id="downloadIMG2" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/3_workplan.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/work_plan.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/work_plan.png" alt="施工計畫">
+          </picture>
+          <div  id="downloadIMG3" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/4_water_storage_type.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_explained.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_explained.png" alt="儲水型圖說">
+          </picture>
+          <div  id="downloadIMG4" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/5_water_storage_type_budget_plan.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_price01.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_price01.png" alt="儲水型預算01">
+          </picture>
+          <div  id="downloadIMG5" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/6_water_storage_type_quotation.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_price02.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_price02.png" alt="儲水型預算02">
+          </picture>
+          <div  id="downloadIMG6" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/7_infiltration_type.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_infil_explained.png" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_infil_explained.png" alt="滲透型圖說">
+          </picture>
+          <div  id="downloadIMG7" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/8_infiltration_type_budget_plan.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_infil_price01.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_infil_price01.png" alt="滲透型預算01">
+          </picture>
+          <div  id="downloadIMG8" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/9_infiltration_type_quotation.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/rainsave_infil_price02.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/rainsave_infil_price02.png" alt="滲透型預算02">
+          </picture>
+          <div  id="downloadIMG9" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/10_buoyancy.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/float_problem.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/float_problem.png" alt="浮力問題">
+          </picture>
+          <div  id="downloadIMG10" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="../pdf/11_collapse.pdf" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="/images/page05/crash_problem.avif" type="image/avif">
+            <img class="img-thumbnail position-relative img-blur" src="/images/page05/crash_problem.png" alt="崩塌問題">
+          </picture>
+          <div  id="downloadIMG11" class="position-absolute top-50 start-50 translate-middle" width="50"></div>
+          <!-- <img class="position-absolute top-50 start-50 translate-middle" width="50" src="/images/page05/download.png" alt="下載鍵"> -->
+        </a>
+      </div>
+    </div>
+  </div>
+<my-footer></my-footer>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script  src="/script.js"></script>
+
+</body>
+</html>

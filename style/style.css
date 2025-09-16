@@ -1,0 +1,1241 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"); */
+* {
+  font-family: "Noto Sans TC", sans-serif;
+  position: relative;
+}
+
+html, body {
+  background-color: #f8f9fa;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+@-webkit-keyframes up_down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes up_down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*共同-Header-導覽列*/
+.top_1 {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.navbar-brand {
+  padding: 5px;
+  color: #555;
+}
+.navbar-brand:hover {
+  color: #555;
+  filter: opacity(70%);
+}
+
+.brand {
+  margin-left: 10px;
+}
+
+.rainsave {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.company_name {
+  filter: opacity(80%);
+}
+
+.company_info {
+  padding-top: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.line {
+  position: absolute;
+  height: 20px;
+  width: 3px;
+  background-color: #555;
+  left: -15px;
+  top: 10px;
+}
+
+.addr, .tel_fax, .email {
+  margin: 3px;
+}
+
+
+ul.nav {
+  margin-top: 70px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  margin: 0 5px;
+  padding-top: 18px;
+  border-radius: 0 0 8px 8px;
+  color: #555;
+  /* background-color: #E5E5E5; */
+  transition: 0.3s;
+}
+.nav-link:hover {
+  transform: translateY(5px);
+}
+
+.nav_hide {
+  z-index: 3;
+  background-color: #FFF;
+}
+
+.nav-link .product{
+  color: #FFF;
+  background-color: #1E3E96;
+}
+/*---導覽列部分結束---*/
+
+/*共同-每頁內容整體調整部分*/
+
+#rainsave_page00,
+#rainsave_page01,
+#rainsave_page02-1,
+#rainsave_page02-2,
+#rainsave_page03,
+#rainsave_page04,
+#rainsave_page05,
+#rainsave_page06,
+#rainsave_page07,
+#rainsave_page08_case,
+#rainsave_page08_case01,
+#rainsave_page00_knowledge {
+  padding-top: 100px;
+}
+
+.wholecontent {
+  margin-top: 70px;
+}
+
+.title {
+  color: #1E3E96;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title_m {
+  border-left: solid 3px #1E3E96;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #555;
+}
+.text {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 400;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+.bg-rainsave {
+  background-color: #1E3E96;
+}
+
+.text-rainsave {
+  color: #1E3E96;
+}
+
+
+.space_blank {
+  height: 30px;
+}
+
+.video_play_btn {
+  transition:width 0.5s, height 0.5s;
+}
+.video_play_btn:hover{
+  width: 110px;
+}
+
+.video_play_btn_s {
+  width: 50px;
+  transition:width 0.3s, height 0.3s;
+}
+.video_play_btn_s:hover{
+  width: 55px;
+}
+
+/* 左右動畫 */
+#animation-demo {
+	width: 200px;
+	height: 150px;
+	position: relative;
+} 
+
+.animated {
+	-webkit-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-iteration-count:infinite;
+	-webkit-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes shake { 
+    0%, 100%{-webkit-transform: translateX(0);} 
+    33%{-webkit-transform: translateX(-200px);} 
+    66%{-webkit-transform: translateX(200px);} 
+} 
+@keyframes shake { 
+  0%, 50%, 100%{-webkit-transform: translateX(0);} 
+  25%{-webkit-transform: translateX(-200px);} 
+  75%{-webkit-transform: translateX(200px);} 
+} 
+.shake { 
+    -webkit-animation-name: shake; 
+    animation-name: shake; 
+}
+/* 左右動畫end */
+
+/* sketchfab */
+#sketchfab1 button {
+  background-image: url(/images/homepage/sf1.jpeg);
+  background-position: 50%;
+  background-size: cover;
+  height: 500px;
+}
+
+#sketchfab2 button {
+  background-image: url(/images/homepage/sf2.jpeg);
+  background-position: 50%;
+  background-size: cover;
+  height: 500px;
+}
+
+
+/*個別調整_首頁*/
+/*首頁-標頭首頁視覺照*/
+#rainsave_page00_homeimg {
+  margin-top: 50px;
+}
+
+.feature_points {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  width: 25vw;
+  list-style: none;
+  font-weight: 700;
+}
+
+
+/*首頁-標頭標題*/
+.subtitle {
+  color: #FFF;
+}
+
+.title_home {
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  margin-bottom: 18px;
+}
+
+.title_home.top_title {
+  text-align: left;
+  color: #FFF;
+  border-bottom: 2px solid #FFF;
+}
+/*首頁&產品大樣-3D模型旋轉*/
+.model {
+  border: solid 2px #1E3E96;
+  border-radius: 20px;
+}
+
+.model_tag {
+  position: absolute;
+  width: 150px;
+  padding: 5px;
+  text-align: center;
+  top: 30px;
+  left: -3px;
+  background-color: #1E3E96;
+  color: #FFF;
+}
+
+.hidelogo {
+  width: 200px;
+  height: 80px;
+  background-color: #FFF;
+  /* top: 424px; */
+  bottom: 15px;
+  right: 18px;
+}
+
+
+.remind_box {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(85, 85, 85, 0.5);
+}
+.remind_box:hover {
+  cursor: default;
+}
+/*首頁-閱讀更多產品介紹*/
+.more {
+  padding: 30px;
+  text-align: center;
+  color: #1E3E96;
+  -webkit-animation: up_down 2s infinite;
+          animation: up_down 2s infinite;
+}
+.more h6 {
+  font-weight: bold;
+  color: #1E3E96;
+}
+.more i {
+  color: #1E3E96;
+  font-size: 1.5rem;
+}
+
+#rainsave_page00_intro {
+  border-top: solid 2px #1E3E96;
+}
+
+#bluebox_line {
+  border-top: solid 2px #1E3E96;
+  opacity: 100;
+  top: 45%;
+  z-index: 1;
+}
+
+.title_intro {
+  margin-top: 10px;
+  color: #1E3E96;
+  font-weight: 700;
+}
+
+.text_l {
+  padding-left: 15px;
+}
+
+.text.intro {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.intro_bluebox {
+
+  display: flex;
+  align-items: center;
+  padding: 5px 25px;
+  z-index: 2;
+}
+.intro_bluebox .like {
+  margin: 30px;
+}
+.intro_bluebox .intro_p {
+  display: inline-block;
+  color: #FFF;
+}
+
+/*首頁-實績案例*/
+.case_pic {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.case_pic a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.casepics {
+  width: 100%;
+  transition: 0.5s;
+}
+.case_pic .col-sm-6:hover .casepics {
+  filter: brightness(0.5);
+}
+.case_pic .casename {
+  position: absolute;
+  color: #FFF;
+  opacity: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  transition-delay: 0.3s;
+  transition: 0.5s;
+}
+.case_pic .col-sm-6:hover .casename {
+  opacity: 1;
+}
+
+
+
+/*首頁-知識分享*/
+#carouselknowledgeControls {
+  z-index: 0;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 5%;
+}
+.carousel-control-prev {
+  left: -5%;
+}
+.carousel-control-next {
+  right: -5%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231E3E96'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231E3E96'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.card {
+  border: none;
+}
+.carousel-item.active {
+  background-color: #f8f9fa;
+}
+.case_mtb .col-sm-4 {
+  margin-bottom: 10px;
+}
+
+.fake_img {
+  background-color: #f8f9fa;
+}
+.article_img {
+  width: 100%;
+}
+.card .title_intro {
+  text-align: left;
+  line-height: 2rem;
+}
+.text.article {
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.readmore {
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: #1E3E96;
+  transition: 0.3s;
+}
+.readmore button {
+  border: none;
+  background-color: #1E3E96;
+  color: #FFF;
+}
+.readmore:hover {
+  transform: translate(2px, 2px);
+}
+.readmore i {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: #FFF;
+}
+.hide_devide {
+  opacity: 0;
+}
+/*首頁-知識分享各頁-材料比較表全+了解更多*/  
+#rainsave_page00_knowledge .text {
+  margin-left: 0;
+}
+#rainsave_page00_knowledge ol {
+  list-style-position: inside;
+}
+.rainsave_cf {
+  width: 100%;
+}
+
+.img_subtitle {
+  color: #1E3E96;
+}
+
+.material_cfchart {
+  margin-top: 5px;
+  border: solid 2px #1E3E96;
+}
+.material_cfchart tr, .material_cfchart td, .material_cfchart th {
+  padding: 5px 10px;
+  border: solid 1px #1E3E96;
+  color: #555;
+}
+.material_cfchart td, .material_cfchart th {
+  text-align: center;
+}
+.material_cfchart th {
+  font-size: 1.2rem;
+  border-bottom: solid 2px #1E3E96;
+}
+.material_cfchart .cf_item {
+  background-color: #E5E5E5;
+}
+.material_cfchart i {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: red;
+}
+
+.awareness {
+  color: red;
+  line-height: 2rem;
+}
+
+.title_m_3 {
+  margin-top: 50px;
+  padding-bottom: 10px;
+  color: #1E3E96;
+  border-bottom: solid 1.5px #1E3E96;
+  font-weight: 700;
+}
+
+.rainsave_name {
+  color: #1E3E96;
+}
+
+/*//文章字體變化*/
+ul.in_article {
+  margin-top: -15px;
+  list-style: disc;
+}
+
+.just_red {
+  color: red;
+}
+
+ol.fw-normal.roman {
+  list-style: upper-roman;
+}
+
+
+/*//左側-更多案例導覽列*/
+#rainsave_page00_knowledge .left_title {
+  font-weight: 700;
+}
+
+#rainsave_page00_knowledge .morecases {
+  padding: 10px 0;
+  padding-bottom: 50px;
+  background-color: #E5E5E5;
+}
+#rainsave_page00_knowledge .morecases .casestudy {
+  margin: 10px 0;
+  padding: 5px 10px;
+  list-style: none;
+  transition: 0.3s;
+}
+#rainsave_page00_knowledge .morecases .casestudy:hover {
+  cursor: pointer;
+  background-color: #1E3E96;
+  color: #FFF;
+}
+#rainsave_page00_knowledge .morecases .casestudy:hover a {
+  color: #FFF;
+}
+#rainsave_page00_knowledge .morecases .casestudy:hover a .navbar_sum {
+  color: #FFF;
+}
+#rainsave_page00_knowledge .morecases .casestudy.no_br {
+  border-radius: 0;
+}
+#rainsave_page00_knowledge .morecases .casestudy a {
+  display: block;
+  border-bottom: solid 1px #1E3E96;
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+}
+#rainsave_page00_knowledge .morecases .casestudy a.active {
+  color: #FFF;
+}
+#rainsave_page00_knowledge .morecases .casestudy a .navbar_sum {
+  font-weight: 400;
+}
+
+.navbar_casepic {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #FFF;
+}
+
+.navbar_sum {
+  font-size: 0.8rem;
+}
+
+/*//前後篇文章切換*/  
+.pagetab {
+  padding: 0 10px;
+  text-decoration: none;
+  color: #1E3E96;
+}
+.pagetab.previous {
+  border-right: solid 1.5px #1E3E96;
+}
+
+.space_blank {
+  height: 30px;
+}
+
+/*首頁-產品施作導覽*/
+#rainsave_page00_productfilm {
+  padding: 80px 0;
+  background-color: #E5E5E5;
+}
+
+.product_film {
+  margin: 10px 0;
+}
+
+.comment {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1E3E96;
+}
+
+/*首頁-公司簡介*/
+.down {
+  font-size: 25px;
+  top: 10px;
+  margin-bottom: 20px;
+}
+
+.company_intro {
+  color: #1E3E96;
+  padding-bottom: 50px;
+  font-size: 1.2rem;
+}
+
+/*產品特點與安裝-10大5大*/
+
+.text .line_feature {
+  margin: 15px 0;
+  color: #1E3E96;
+  font-weight: 400;
+}
+.line_feature {
+  margin: 5px;
+}
+.title_m_2 {
+  color: #1E3E96;
+  text-align: center;
+  padding: 8px;
+}
+
+.fivepoints {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  display: inline-block;
+  text-align: center;
+  margin-top: 25px;
+  padding: 5px 15px;
+  background-color: #1E3E96;
+  color: #FFF;
+}
+
+/*產品特點與安裝-安裝教學*/
+
+/*產品大樣_主體&側板*/
+.size_info {
+  position: absolute;
+  list-style: none;
+  top: 23px;
+  bottom: 390px;
+  right: 30px;
+}
+
+.short {
+  width: 110%;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.float {
+  position: relative;
+  top: -10px;
+  text-align: right;
+  font-size: 1rem;
+}
+.hide {
+  opacity: 0;
+}
+
+/*資源下載*/
+.card {
+  border: none;
+  text-align: center;
+}
+.img_box {
+  border: solid 1px;
+}
+.dowwnload_btn {
+  padding: 1px 15px;
+  padding-bottom: 5px;
+  border: solid 2px #1E3E96;
+  color: #1E3E96;
+  transition: 0.3s;
+}
+.dowwnload_btn:hover {
+  color: #FFF;
+  background-color: #1E3E96;
+}
+.dowwnload_btn:hover i {
+  color: #FFF;
+}
+.dowwnload_btn i {
+  margin-left: 5px;
+  top: 2px;
+  color: #1E3E96;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+/*滲透VS儲水*/
+.infiltrate, .saving {
+  margin-top: 50px;
+}
+.infil_pic, .save_pic {
+  display: block;
+}
+.pic {
+  width: 100%;
+}
+.text_p1 {
+  padding-left: 5px;
+  color: #1E3E96;
+  font-size: 0.8rem;
+}
+.title_m_3 {
+  margin-top: 50px;
+  padding-bottom: 10px;
+  color: #1E3E96;
+  border-bottom: solid 1.5px #1E3E96;
+  font-weight: 700;
+}
+
+/*滲透VS儲水-相關影片*/
+.filmplace {
+  margin: 5px;
+  height: 315px;
+  background-color: #777;
+}
+
+/*需求計算-左半輸入數值*/
+.intro_p2 {
+  margin-bottom: 50px;
+  line-height: 2rem;
+}
+.clac_tor {
+  margin-left: 12px;
+}
+label {
+  padding-right: 5px;
+  margin: 10px 0;
+}
+.typein {
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+input {
+  width: 100px;
+  margin-right: 5px;
+  font-size: 1rem;
+}
+input::-moz-placeholder {
+  font-size: 0.8rem;
+}
+input:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+input::placeholder {
+  font-size: 0.8rem;
+}
+
+span {
+  margin-right: 15px;
+}
+.result {
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #1E3E96;
+}
+
+#calcId.calc_all, #clearId.clear_all {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #555;
+  color: #FFF;
+  padding: 3px 10px;
+  margin-right: 5px;
+}
+
+/*需求計算-右半預算牌價*/
+.red {
+  color: red;
+  margin: 20px 0;
+}
+
+/*需求計算-下半表格*/
+button.nav-link {
+  margin: 0;
+  padding-top: 5px;
+  border-radius: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+button.nav-link.active {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+button.nav-link:hover {
+  transform: translateY(-5px);
+}
+.table {
+  margin-top: 25px;
+  padding-bottom: 20px;
+}
+table, th, td {
+  border-collapse: collapse;
+  border: solid 1px;
+  padding: 2px 10px;
+}
+table {
+  border: solid 2px;
+}
+th {
+  text-align: center;
+}
+.intable {
+  margin-right: 0;
+  margin-left: 80px;
+}
+.table_info {
+  color: red;
+  border-color: #555;
+}
+#table_bodyNumId, 
+#table_bodySpriceId, 
+#table_boardNumId, 
+#table_boardSpriceId, 
+#table_concretNumId, 
+#table_concretSpriceId, 
+#table_infilcloNumId, 
+#table_infilcloSpriceId, 
+#table_netNumId, 
+#table_netSpriceId, 
+#table_installNumId, 
+#table_installSpriceId, 
+#table_totalpriceId, 
+#table_totalpriceId_1, 
+#table_bodyNumId_2, 
+#table_bodySpriceId_2, 
+#table_boardNumId_2, 
+#table_boardSpriceId_2, 
+#table_concretNumId_2,
+#table_concretSpriceId_2, 
+#table_infilcloNumId_2, 
+#table_infilcloSpriceId_2, 
+#table_netNumId_2, 
+#table_netSpriceId_2, 
+#table_uninfilNumId_2, 
+#table_uninfilSpriceId_2, 
+#table_installNumId_2, 
+#table_installSpriceId_2, 
+#table_totalpriceId_2, 
+#table_totalpriceId_2_1, 
+#table_bodyNumId_3, 
+#table_bodySpriceId_3, 
+#table_boardNumId_3, 
+#table_boardSpriceId_3, 
+#table_concretNumId_3, 
+#table_concretSpriceId_3, 
+#table_infilcloNumId_3, 
+#table_infilcloSpriceId_3, 
+#table_netNumId_3, 
+#table_netSpriceId_3, 
+#table_uninfilNumId_3, 
+#table_uninfilSpriceId_3, 
+#table_installNumId_3, 
+#table_installSpriceId_3, 
+#table_totalpriceId_3, 
+#table_totalpriceId_3_1, 
+#table_bodyNumId_4, 
+#table_bodySpriceId_4, 
+#table_boardNumId_4, 
+#table_boardSpriceId_4, 
+#table_concretNumId_4, 
+#table_concretSpriceId_4, 
+#table_infilcloNumId_4, 
+#table_infilcloSpriceId_4, 
+#table_netNumId_4, 
+#table_netSpriceId_4, 
+#table_uninfilNumId_4, 
+#table_uninfilSpriceId_4, 
+#table_installNumId_4, 
+#table_installSpriceId_4, 
+#table_totalpriceId_4, 
+#table_totalpriceId_4_1 {
+  color: #1E3E96;
+  border: solid 1px #494949;
+  font-weight: 500;
+}
+#table_totalpriceId_1, 
+#table_totalpriceId_2_1, 
+#table_totalpriceId_3_1, 
+#table_totalpriceId_4_1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* 下載img-blur */
+.img-blur{
+  transition: 0.3s;
+}
+
+.img-blur:hover {
+  -webkit-filter: blur(2px) grayscale(50%);
+	filter: blur(2px) grayscale(50%);
+}
+
+
+/*使用須知-上半部*/ 
+
+.title_m_1 {
+  font-weight: 700;
+  color: #1E3E96;
+}
+
+.text_4 {
+  color: #555;
+  line-height: 28px;
+  padding-top: 5px;
+}
+
+/*使用須知-內容左半*/  
+.warning {
+  width: 95%;
+}
+/*使用須知-內容右半*/
+ul.text_4 {
+  padding-left: 35px;
+}
+
+.warn {
+  margin-bottom: 2px;
+}
+/*使用須知-內容下半*/
+.situation {
+  width: 100%;
+}
+
+.situations {
+  border: solid 1.5px #1E3E96;
+}
+
+/*使用須知-下半部*/
+.tag_2 {
+  position: absolute;
+  font-size: 0.9rem;
+  top: 75%;
+  z-index: 1;
+}
+
+/*荷重與壓力-地震淺變*/
+.stress_test {
+  width: 120%;
+}
+
+.pic_cut {
+
+}
+
+.pic_title, .pressure_chart {
+  position: relative;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pressure_chart {
+  margin-top: 5px;
+  color: #1E3E96;
+  border: solid 2px #1E3E96;
+}
+.pressure_chart tr, .pressure_chart td {
+  padding: 5px 10px;
+  border: solid 1px #1E3E96;
+  color: #1E3E96;
+}
+
+.press_chart {
+  left: 10%;
+  width: 80%;
+}
+/*荷重與壓力-文字部分*/  
+.title_p {
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #1E3E96;
+}
+
+#rainsave_page07 .text {
+  margin-left: 0;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+#rainsave_page07 .red {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/*實績案例-單元*/ 
+.case_1 {
+  position: relative;
+  width: 100%;
+}
+
+#rainsave_page08_case .pic_cut {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+#rainsave_page08_case .intro {
+  color: #555;
+  font-size: 1rem;
+  line-height: 27px;
+}
+
+#rainsave_page08_case .title_m {
+  margin-top: 5px;
+}
+#rainsave_page08_case .readmore {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: solid 2px #1E3E96;
+  background-color: #FFF;
+  color: #FFF;
+  transition: 0.3s;
+}
+#rainsave_page08_case .readmore:hover {
+  transform: translate(2px, 2px);
+}
+#rainsave_page08_case .readmore a {
+  text-decoration: none;
+  color: #1E3E96;
+  font-weight: 500;
+}
+#rainsave_page08_case .readmore i {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: #1E3E96;
+}
+
+/*實績案例個案頁*/
+.left_title {
+  font-weight: 700;
+}
+.morecases {
+  padding: 10px 0;
+  padding-bottom: 50px;
+  background-color: #E5E5E5;
+}
+.morecases .casestudy {
+  margin: 10px 0;
+  padding: 5px 10px;
+  list-style: none;
+  transition: 0.3s;
+}
+.morecases .casestudy:hover {
+  cursor: pointer;
+  background-color: #1E3E96;
+  color: #FFF;
+}
+.morecases .casestudy:hover a {
+  color: #FFF;
+}
+.morecases .casestudy.no_br {
+  border-radius: 0;
+}
+.morecases .casestudy a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+}
+.morecases .casestudy a.active {
+  color: #FFF;
+}
+
+
+/*共同-Footer*/
+.company_footinfo {
+  padding: 20px 0 30px 0;
+}
+
+.company_intro_bold {
+  font-size: 25px;
+  color: #1E3E96;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.company_intro_small {
+  margin-bottom: 0px;
+  color: #1E3E96;
+  /* font-size: 1.2rem; */
+}
+
+a.company_intro_small {
+  text-decoration: none;
+}
+
+
+
+#company_info1 {
+  border-top: solid 2px #1E3E96;
+}
+
+.companydeco {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.companydeco img {
+  width: 60%;
+  padding: 0px 10px;
+  background-color: #FFF;
+}
+
+
+#company_info .infoboxes {
+  text-align: center;
+}
+
+.info2 {
+  display: inline-block;
+  margin: 30px;
+  color: #FFF;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.info2:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* 影音頻道 */
+.rs-tube-btn {
+  background-color: #E5E5E5;
+}
+
+.rs-tube-btn:hover {
+  background-color: #1E3E96;
+  color: #E5E5E5;
+}
+
+/*共同-RWD調整*/
+@media screen and (max-width: 420px) {
+  .navbar-brand {
+    width: 50%;
+  }
+  .feature_points {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 576px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+  }
+  .feature_points {
+    width: 40vw;
+  }
+  .hide {
+    opacity: 1;
+  }
+  .hide_devide {
+    opacity: 1;
+  }
+  .pressure_chart {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  ul.nav {
+    display: block;
+    /* top: -33px; */
+    /* background-color: #E5E5E5; */
+  }
+
+  .nav-link {
+    margin: 0;
+    padding-top: 5px;
+    border-radius: 0;
+  }
+  .nav-link:hover {
+    transform: none;
+  }
+
+  .homeimg {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .feature_points {
+    bottom: 0;
+  }
+  .feature_points li {
+    font-size: 0.75rem;
+  }
+  .feature_points .ol_num {
+    padding: 2px 8px;
+    margin-right: 10px;
+  }
+  .text .line_feature {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card-body {
+    height: 280px;
+  }
+}
