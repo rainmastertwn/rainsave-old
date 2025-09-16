@@ -16,7 +16,6 @@ module.exports = {
   },
   output: {
     clean: true,
-    publicPath: '_old',
   },
   optimization: {
     minimizer: [
